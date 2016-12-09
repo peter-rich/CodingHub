@@ -1,0 +1,543 @@
+<?php
+ob_clean();
+session_destroy();
+setcookie("users");
+session_unset();//free all session variable
+session_destroy();//销毁一个会话中的全部数据
+setcookie(session_name(),'',time()-3600);//销毁与客户端的卡号
+?>
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>CodingHub</title>
+		<meta name="description" content="Worthy a Bootstrap-based, Responsive HTML5 Template">
+		<meta name="author" content="htmlcoder.me">
+		<!--滑动验证-->
+		<link href="css/drag.css" rel="stylesheet" type="text/css">
+		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<script src="js/drag.js" type="text/javascript"></script>
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico">
+
+		<!-- Web Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+
+		<!-- Bootstrap core CSS -->
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+		<!-- Font Awesome CSS -->
+		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+		<!-- Plugins -->
+		<link href="css/animations.css" rel="stylesheet">
+
+		<!-- Worthy core CSS file -->
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- Custom css --> 
+		<link href="css/custom.css" rel="stylesheet">
+	</head>
+<style type="text/css">
+body{background-repeat:no-repeat;background-image: url(<!--your picture-->);background-position:center;background-attachment:fixed;
+background-color:white;
+}
+
+
+h2 {background-color: transparent}
+
+p {background-color: no-color<!--rgb(250,250,255)-->}
+
+p.no2 {background-color: gray; padding: 20px;}
+
+content2 {<!--input something here-->}
+
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFE;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E82C5;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFB;
+    border-color: #78C3F0;
+    color: #004974;
+    text-decoration: none;
+}
+
+input[type=text], select {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=password], select {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 70%;
+    background-color: #3CBF5A;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: skyblue;
+}
+</style>
+	<body class="no-trans">
+		<!-- scrollToTop -->
+		<!-- ================ -->
+		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+
+		<!-- header start -->
+		<!-- ================ --> 
+		<header class="header fixed clearfix navbar navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+
+						<!-- header-left start -->
+						<!-- ================ -->
+						<div class="header-left clearfix">
+
+							<!-- logo -->
+							<div class="logo smooth-scroll">
+								<a href="#banner"><img id="logo" src="php/images/logo.png" alt="CodingHub"></a>
+							</div>
+
+							<!-- name-and-slogan -->
+							<div class="site-name-and-slogan smooth-scroll">
+								<div class="site-name"><a href="#banner">CodingHub</a></div>
+								<div class="site-slogan">Not only a Hub </div>
+							</div>
+
+						</div>
+						<!-- header-left end -->
+
+					</div>
+					<div class="col-md-8">
+
+						<!-- header-right start -->
+						<!-- ================ -->
+						<div class="header-right clearfix">
+
+							<!-- main-navigation start -->
+							<!-- ================ -->
+							<div class="main-navigation animated">
+
+								<!-- navbar start -->
+								<!-- ================ -->
+								<nav class="navbar navbar-default" role="navigation">
+									<div class="container-fluid">
+										<!-- Collect the nav links, forms, and other content for toggling -->
+										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
+											<ul class="nav navbar-nav navbar-right">
+												<li class="active"><a href="#banner" >Home</a></li>
+												<li><a href="#logged" >log in</a></li>
+												<li><a href="#sign" >Sign Up</a></li>
+												<li><a href="#about" >About</a></li>
+												<li><a href="html/index.html" face=微软雅黑 >Club</a></li>
+												
+												
+											</ul>
+										</div>
+
+									</div>
+								</nav>
+								<!-- navbar end -->
+
+							</div>
+							<!-- main-navigation end -->
+
+						</div>
+						<!-- header-right end -->
+
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- header end -->
+
+		<!-- banner start -->
+		<!-- ================ -->
+		<div id="banner" class="banner">
+			<div class="banner-image"></div>
+			<div class="banner-caption">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 object-non-visible" data-animation-effect="fadeIn">
+							<h1 class="text-center" face=微软雅黑  size=8 style="font-weight:bold;font-style:italic;" >We are <span>CodingHub</span></h1>
+							<br></br>
+							<p class="text-center" style="font-weight:bold;font-style:italic;" size=4>Author: Zhanfu Yang, Haonan Zhang, Haieng Wang</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- banner end -->
+				<!-- section start -->
+		<!-- ================ -->
+		<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 id="logged" class="title text-center"><span style="font-weight:bold;font-style:italic;">CodingHub</span></h1>
+						<div class="space"></div>
+						<div class="row">
+							<div class="child">
+								<form name="frm" method="post" action = "php/checklog.php">
+
+
+
+								<table width="90%" border="0" align="left">
+
+								<div>
+								<tr>
+
+									<td width="30%" height="35" align="left"></td>
+
+									<td width="70%" height="35"><input type="hidden" name="check" value="1"/> </td>
+
+								</tr>
+								<tr>
+									
+								    <td  height="36" align="right"><LI><FONT face=微软雅黑  size=4 style="font-weight:bold;font-style:italic;">Username </FONT><FONT face=微软雅黑  size=4 color=white>U</FONT></td>
+
+								    <td  height="36"><input type="text" name="name"  /></td>
+								 </tr> 
+								<tr>
+								    <td  height="36" align="right"><LI><FONT face=微软雅黑  size=4 style="font-weight:bold;font-style:italic;">Password </FONT><FONT face=微软雅黑  size=4 color=white>U</FONT></td>
+								    <td  height="36"><input type="password" name="password"  /></td>
+								</tr>
+								<tr>
+								    <td  height="36" align="right"><LI><FONT face=微软雅黑  size=4 style="font-weight:bold;font-style:italic;">Drag Identy<FONT face=微软雅黑  size=4 color=white>U</FONT></td>
+								    <td  height="36" align="left"><br><div id="drag" align="left"></div></td>
+								</tr>
+								</div>
+								</table>
+
+								<table width="70%" border="0" align="right"><tr><td>
+								<br>
+								<BR>
+								</table>
+								<table width="71%" border="0" align="left"><tr><td>
+								<table width="85%" border="0" align="right">
+
+								<tr>
+
+								    <td height="80%" colspan="2" align="right">
+								          <input class = "content2" type="submit" name="sub" value="submit" />
+		  
+										  </td>
+								</form>
+								  <BR>
+								</table>
+								
+								</table>
+						</div>
+						<div class="space"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br></br><br></br>
+		<!-- section end -->
+		
+		<!-- section start -->
+		<!-- ================ -->
+		<div class="default-bg space blue">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<h1 class="text-center">Let's Learn Together!</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- section end -->
+		
+		<!-- section start -->
+		<form name="frm" method="post" action = "php/checksign.php">
+		<br>
+		<table width="40%" border="0" align="center">
+		<tr>
+
+				<td width="30%" height="35" align="left"></td>
+
+			<td width="70%" height="35"><input type="hidden" name="type" value="1"> </td>
+
+		</tr>
+
+		<tr>
+
+			<td  width="30%" height="35" align="left"><LI>Username:</td>
+
+			<td width="70%" height="35"><input type="text" name="name" /></td>
+
+		</tr>
+
+		<tr>
+
+			<td id='sign' width="30%" height="35" align="left"><LI>Password:</td>
+
+			<td width="70%" height="35"><input type="password" name="password" /></td>
+
+		</tr>
+		<tr>
+
+			<td  width="30%" height="35" align="left"><LI>Repeat password:</td>
+
+			<td width="70%" height="35"><input type="password" name="password2" /></td>
+
+		</tr>
+		<tr><td color=white ></td></tr>
+		<tr>
+
+			<td width="30%" height="35" align="left" ><LI>birth:</td>
+
+			<td>  <select id="year" onchange="changeday()" name="year"> <option value="2">year</option></select><select id="month" name="month"  onchange="changeday()"><option value="">month</option> </select><select id="day" name="day" ><option value="">day</option> </select>
+					<script type="text/javascript" language="javascript">
+                            var curdate = new Date();
+                            var year = document.getElementById("year");
+                            var month = document.getElementById("month");
+                            var day = document.getElementById("day");
+                            //绑定年份月分的默认
+                            function add() {
+                                var curyear = curdate.getFullYear();
+                                var minyear = curyear - 80;
+                                var maxyear = curyear ;
+								for (maxyear; maxyear >= minyear; maxyear = maxyear - 1) {
+                                    year.options.add(new Option(maxyear, maxyear));
+                                }
+                                for (var mindex = 1; mindex <= 12; mindex++) {
+                                    month.options.add(new Option(mindex, mindex));
+                                }
+                            }
+
+                            //判断是否是闰年
+                            function leapyear(intyear) {
+                                var result = false;
+                                if (((intyear % 400 == 0) && (intyear % 100 != 0)) || (intyear % 4 == 0)) {
+                                    result = true;
+                                }
+                                else {
+                                    result = false;
+                                }
+                                return result;
+                            }
+                            //绑定天数
+                            function addday(maxday) {
+                                day.options.length = 1;
+                                for (var dindex = 1; dindex <= maxday; dindex++) {
+                                    day.options.add(new Option(dindex, dindex));
+                                }
+                            }
+                            function changeday() {
+                                if (year.value == null || year.value == "") {
+                                    alert("请先选择年份！");
+                                    return false;
+                                }
+                                else {
+                                    if (month.value == 1 || month.value == 3 || month.value == 5 || month.value == 7 || month.value == 8 || month.value == 10 || month.value == 12) {
+                                        addday(31);
+                                    }
+                                    else {
+                                        if (month.value == 4 || month.value == 6 || month.value == 9 || month.value == 11) {
+                                            addday(30);
+                                        }
+                                        else {
+                                            if (leapyear(year.value)) {
+                                                addday(29);
+                                            }
+                                            else {
+                                                addday(28);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            window.onload = add;
+						</script></td>
+
+		</tr>
+		<tr></tr>
+		<tr>
+
+			<td width="30%" height="35" align="left"><LI>Company/Univers:</td>
+
+			<td width="70%" height="35"><input type="text" name="insitusion" /></td>
+
+		</tr>
+		<tr>
+
+			<td width="30%" height="35" align="left"><LI>email:</td>
+
+			<td width="70%" height="35"><input type="text" name="email" /></td>
+
+		</tr>
+  
+		</table>
+
+		<table width="35%" border="0" align="center"><tr>
+  
+
+		<BR>
+
+
+
+
+
+			<td height="35" colspan="2" align="left">
+				<input type="submit" name="sub" value="submit" /></td>
+ 
+		</table>
+		</form>
+		<Br></Br>
+
+		<!-- section end -->
+		<!-- section start -->
+		<!-- ================ -->
+		<div class="default-bg space blue">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<h1 class="text-center">Let's Learn Together!</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- section end -->		
+		
+
+		
+		
+		<!-- section start -->
+		<!-- ================ -->
+		<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 id="about" class="title text-center">About <span>CodingHub</span></h1>
+						<p class="lead text-center">CodingHub is a free platform aim to those programer,coder and learner who feel like coding.</p>
+						<div class="space"></div>
+						<div class="row">
+							<div class="col-md-6">
+								<img src="php/images/section-image-1.png" alt="">
+								<div class="space"></div>
+							</div>
+							<div class="col-md-6">
+							    <Br></br>
+								<p>The author is Zhanfu Yang, Haonan Zhang and Haieng Huang</p>
+								<p>Here is the tips you may need to know:</p>
+								<ul class="list-unstyled">
+								    <li></li>
+									<li><i class="fa fa-caret-right pr-10 text-colored"></i> First: you need to sign a account so as to log in</li>
+									<li><i class="fa fa-caret-right pr-10 text-colored"></i> Second: Help yourself when you use our platform</li>
+									<li><i class="fa fa-caret-right pr-10 text-colored"></i> Third: This is the simple one which have limits function</li>
+								</ul>
+							</div>
+						</div>
+						<div class="space"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- section end -->
+		
+		<!-- section start -->
+		<!-- ================ -->
+		<div class="default-bg space blue">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<h1 class="text-center">Let's Learn Together!</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- section end -->
+
+
+
+
+			<!-- .subfooter start -->
+			<!-- ================ -->
+			<div class="subfooter">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<p class="text-center">Copyright © 2016 CodingHub.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- .subfooter end -->
+
+		</footer>
+		<!-- footer end -->
+		<!--滑动验证-->
+		<script type="text/javascript">
+		$('#drag').drag();
+		</script>
+		<!-- JavaScript files placed at the end of the document so the pages load faster
+		================================================== -->
+		<!-- Jquery and Bootstap core js files -->
+		<script type="text/javascript" src="plugins/jquery.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Modernizr javascript -->
+		<script type="text/javascript" src="plugins/modernizr.js"></script>
+
+		<!-- Isotope javascript -->
+		<script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
+		
+		<!-- Backstretch javascript -->
+		<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
+
+		<!-- Appear javascript -->
+		<script type="text/javascript" src="plugins/jquery.appear.js"></script>
+
+		<!-- Initialization of Plugins -->
+		<script type="text/javascript" src="js/template.js"></script>
+
+		<!-- Custom Scripts -->
+		<script type="text/javascript" src="js/custom.js"></script>
+
+	</body>
+</html>
